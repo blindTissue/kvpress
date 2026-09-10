@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: Copyright (c) 1993-2025 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-FileCopyrightText: Copyright (c) 1993-2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 
 from benchmarks.aime25.calculate_metrics import calculate_metrics as aime25_scorer
@@ -40,6 +40,7 @@ from kvpress import (
     ObservedAttentionPress,
     PyramidKVPress,
     QFilterPress,
+    QueryZipPress,
     RandomPress,
     RestoreKVPress,
     SnapKVPress,
@@ -107,6 +108,8 @@ PRESS_REGISTRY = {
     "observed_attention": ObservedAttentionPress(),
     "pyramidkv": PyramidKVPress(),
     "qfilter": QFilterPress(),
+    "queryzip_plus": QueryZipPress(),
+    "queryzip_plus_amax": QueryZipPress(query_score_mode="amax"),
     "random": RandomPress(),
     "RestoreKV": RestoreKVPress(),
     "RestoreKV_plus": RestoreKVPress(kvzip_plus_normalization=True),  # RestoreKV+ (KVzip+ scoring)

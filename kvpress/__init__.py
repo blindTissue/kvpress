@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: Copyright (c) 1993-2025 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-FileCopyrightText: Copyright (c) 1993-2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 
 
@@ -40,6 +40,7 @@ from kvpress.presses.per_layer_compression_press import PerLayerCompressionPress
 from kvpress.presses.prefill_decoding_press import PrefillDecodingPress
 from kvpress.presses.pyramidkv_press import PyramidKVPress
 from kvpress.presses.qfilter_press import QFilterPress
+from kvpress.presses.queryzip_press import QueryZipPress
 from kvpress.presses.random_press import RandomPress
 from kvpress.presses.restorekv_press import RestoreKVPress
 from kvpress.presses.scorer_press import ScorerPress
@@ -83,6 +84,7 @@ __all__ = [
     "BlockPress",
     "KeyDiffPress",
     "KVzipPress",
+    "QueryZipPress",
     "ExpectedAttentionStatsPress",
     "CAMPress",
     "DecodingPress",

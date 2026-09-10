@@ -87,6 +87,9 @@ class EvaluationConfig:
         # Validate press
         assert self.press_name in PRESS_REGISTRY, f"Press '{self.press_name}' not found in PRESS_REGISTRY"
 
+        if self.press_name in ("queryzip_plus", "queryzip_plus_amax") and not self.query_aware:
+            raise ValueError("QueryZipPress requires query_aware=true so the question is included before compression")
+
         if self.press_name == "no_press":
             # override compression_ratio to 0.0
             logger.info("Using 'no_press' configuration. Overriding compression_ratio to 0.0")
